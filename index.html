@@ -1,18 +1,92 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#1f1f35">
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Page Title -->
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <!-- ============================= -->
+  <!-- PWA CONFIGURATION -->
+  <!-- ============================= -->
+
   <title>TaskFlow — Cloud-Based Task Management</title>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+  <!-- Web App Manifest -->
+  <link
+    rel="manifest"
+    href="./manifest.json"
+  />
+
+  <!-- Theme Color -->
+  <meta
+    name="theme-color"
+    content="#8b5cf6"
+  />
+
+  <!-- Mobile / iOS -->
+  <meta
+    name="mobile-web-app-capable"
+    content="yes"
+  />
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  />
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  />
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="TaskFlow"
+  />
+
+  <!-- App Icons -->
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="./res/favicon.ico"
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="./res/icon-192.png"
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="512x512"
+    href="./res/icon-512.png"
+  />
+
+  <link
+    rel="apple-touch-icon"
+    href="./res/icon-192.png"
+  />
+
+  <!-- ============================= -->
+  <!-- CSS -->
+  <!-- ============================= -->
+
+  <link
+    rel="stylesheet"
+    href="./css/style.css"
+  />
 
   <!-- DaisyUI -->
   <link
@@ -34,34 +108,52 @@
     rel="stylesheet"
   />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="res/favicon.ico" />
 </head>
 
 <body>
 
-  <!-- Main Application -->
+  <!-- ============================= -->
+  <!-- FOOTER / BRANDING -->
+  <!-- ============================= -->
+
+  <footer>
+    <div class="author-text">
+      <p>
+        TaskFlow — Cloud-Based Task Management
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- ============================= -->
+  <!-- MAIN CONTAINER -->
+  <!-- ============================= -->
+
   <div class="container">
 
-    <!-- Header -->
+    <!-- ============================= -->
+    <!-- HEADER -->
+    <!-- ============================= -->
+
     <header>
 
-      <!-- Application Title -->
-      <div class="app-brand">
-        <span class="brand-subtitle">CLOUD-BASED</span>
-        <h1>TaskFlow</h1>
-      </div>
+      <h1>TaskFlow</h1>
 
-      <!-- Error / Alert Message -->
+      <!-- Error Message -->
       <div class="alert-message"></div>
 
-      <!-- Progress Section -->
+
+      <!-- ============================= -->
+      <!-- PROGRESS SECTION -->
+      <!-- ============================= -->
+
       <div class="progress-container mb-4 w-full">
 
         <div class="stats stats-horizontal shadow w-full mb-4">
 
           <!-- Total Tasks -->
           <div class="stat">
+
             <div class="stat-figure text-primary">
               <i class="bx bx-task text-2xl"></i>
             </div>
@@ -73,10 +165,13 @@
             <div class="stat-value text-primary total-counter">
               0
             </div>
+
           </div>
 
-          <!-- Completed Tasks -->
+
+          <!-- Completed -->
           <div class="stat">
+
             <div class="stat-figure text-success">
               <i class="bx bx-check-circle text-2xl"></i>
             </div>
@@ -88,10 +183,13 @@
             <div class="stat-value text-success completed-counter">
               0
             </div>
+
           </div>
 
-          <!-- Pending Tasks -->
+
+          <!-- Pending -->
           <div class="stat">
+
             <div class="stat-figure text-warning">
               <i class="bx bx-time text-2xl"></i>
             </div>
@@ -103,10 +201,13 @@
             <div class="stat-value text-warning pending-counter">
               0
             </div>
+
           </div>
+
 
           <!-- Progress -->
           <div class="stat">
+
             <div class="stat-figure text-info">
               <i class="bx bx-pie-chart-alt text-2xl"></i>
             </div>
@@ -118,11 +219,14 @@
             <div class="stat-value text-info percentage-display">
               0%
             </div>
+
           </div>
 
         </div>
 
+
         <!-- Progress Bar -->
+
         <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
 
           <div
@@ -130,31 +234,35 @@
             style="width: 0%"
             aria-valuenow="0"
             aria-valuemin="0"
-            aria-valuemax="100">
-          </div>
+            aria-valuemax="100"
+          ></div>
 
         </div>
 
       </div>
 
-      <!-- Add Task Section -->
+
+      <!-- ============================= -->
+      <!-- ADD TASK SECTION -->
+      <!-- ============================= -->
+
       <div class="input-section">
 
-        <!-- Task Input -->
         <input
           type="text"
           placeholder="Add a todo . . ."
           class="input input-bordered input-secondary w-full max-w-xs"
         />
 
-        <!-- Due Date -->
         <input
           type="date"
           class="input input-bordered input-secondary w-full max-w-xs schedule-date"
         />
 
-        <!-- Add Button -->
-        <button class="btn btn-secondary add-task-button">
+        <button
+          class="btn btn-secondary add-task-button"
+          type="button"
+        >
           <i class="bx bx-plus bx-sm"></i>
         </button>
 
@@ -162,12 +270,17 @@
 
     </header>
 
-    <!-- Search and Filter Section -->
+
+    <!-- ============================= -->
+    <!-- SEARCH & FILTER -->
+    <!-- ============================= -->
+
     <div class="search-filter-section mb-4 w-full">
 
       <div class="flex flex-col sm:flex-row gap-4 w-full">
 
-        <!-- Search Bar -->
+        <!-- Search -->
+
         <div class="flex-1">
 
           <div class="relative">
@@ -179,26 +292,33 @@
             />
 
             <i
-              class="bx bx-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-            </i>
+              class="bx bx-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+            ></i>
 
           </div>
 
         </div>
 
-        <!-- Filter Dropdown -->
+
+        <!-- Filter -->
+
         <div class="dropdown">
 
-          <label tabindex="0" class="btn btn-outline">
+          <label
+            tabindex="0"
+            class="btn btn-outline"
+          >
 
             <i class="bx bx-filter mr-2"></i>
+
             Filter
 
           </label>
 
           <ul
             tabindex="0"
-            class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+            class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+          >
 
             <li>
               <a data-filter="all">
@@ -226,25 +346,34 @@
 
     </div>
 
-    <!-- Todo Controls -->
+
+    <!-- ============================= -->
+    <!-- TODO FILTER -->
+    <!-- ============================= -->
+
     <div class="todos-filter">
 
-      <!-- Left Controls -->
       <div class="flex gap-2">
 
-        <!-- Sort / Filter Dropdown -->
+        <!-- Sort / Filter -->
+
         <div class="dropdown">
 
-          <label tabindex="0" class="btn btn-ghost btn-sm">
+          <label
+            tabindex="0"
+            class="btn btn-ghost btn-sm"
+          >
 
             <i class="bx bx-sort mr-1"></i>
+
             Sort
 
           </label>
 
           <ul
             tabindex="0"
-            class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+            class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+          >
 
             <li>
               <a onclick="todoApp?.uiManager?.handleFilterTodos('all')">
@@ -268,10 +397,14 @@
 
         </div>
 
-        <!-- Keyboard Shortcut Help -->
+
+        <!-- Help -->
+
         <button
           class="btn btn-ghost btn-sm help-btn"
-          title="Keyboard Shortcuts">
+          title="Keyboard Shortcuts"
+          type="button"
+        >
 
           <i class="bx bx-help-circle"></i>
 
@@ -279,22 +412,31 @@
 
       </div>
 
+
       <!-- Delete All -->
-      <button class="btn btn-error delete-all-btn">
+
+      <button
+        class="btn btn-error delete-all-btn"
+        type="button"
+      >
 
         <i class="bx bx-trash mr-2"></i>
+
         Delete All
 
       </button>
 
     </div>
 
-    <!-- Tasks Table -->
+
+    <!-- ============================= -->
+    <!-- TASK TABLE -->
+    <!-- ============================= -->
+
     <div class="table-container overflow-x-auto">
 
       <table class="table table-zebra w-full">
 
-        <!-- Table Header -->
         <thead>
 
           <tr>
@@ -319,7 +461,6 @@
 
         </thead>
 
-        <!-- Tasks will be inserted here by JavaScript -->
         <tbody class="todos-list-body"></tbody>
 
       </table>
@@ -328,7 +469,11 @@
 
   </div>
 
-  <!-- Keyboard Shortcuts Help Modal -->
+
+  <!-- ============================= -->
+  <!-- KEYBOARD SHORTCUT MODAL -->
+  <!-- ============================= -->
+
   <div id="help-modal" class="modal">
 
     <div class="modal-box">
@@ -336,13 +481,14 @@
       <h3 class="font-bold text-lg mb-4">
 
         <i class="bx bx-keyboard mr-2"></i>
+
         Keyboard Shortcuts
 
       </h3>
 
+
       <div class="grid grid-cols-1 gap-3">
 
-        <!-- Add New Task -->
         <div class="flex justify-between items-center">
 
           <span>
@@ -355,7 +501,7 @@
 
         </div>
 
-        <!-- Search -->
+
         <div class="flex justify-between items-center">
 
           <span>
@@ -368,7 +514,7 @@
 
         </div>
 
-        <!-- Show All -->
+
         <div class="flex justify-between items-center">
 
           <span>
@@ -381,7 +527,7 @@
 
         </div>
 
-        <!-- Cancel -->
+
         <div class="flex justify-between items-center">
 
           <span>
@@ -394,7 +540,7 @@
 
         </div>
 
-        <!-- Enter -->
+
         <div class="flex justify-between items-center">
 
           <span>
@@ -409,10 +555,13 @@
 
       </div>
 
-      <!-- Close Button -->
+
       <div class="modal-action">
 
-        <button class="btn btn-ghost close-help-modal">
+        <button
+          class="btn btn-ghost close-help-modal"
+          type="button"
+        >
           Close
         </button>
 
@@ -422,20 +571,29 @@
 
   </div>
 
-  <!-- Theme Switcher -->
+
+  <!-- ============================= -->
+  <!-- THEME SWITCHER -->
+  <!-- ============================= -->
+
   <div class="theme-switcher">
 
     <div class="dropdown dropdown-left">
 
-      <label tabindex="0" class="btn m-1">
+      <label
+        tabindex="0"
+        class="btn m-1"
+      >
 
         <i class="bx bxs-palette bx-sm"></i>
 
       </label>
 
+
       <ul
         tabindex="0"
-        class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+        class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+      >
 
         <li class="theme-item" theme="cupcake">
           <a>cupcake</a>
@@ -487,21 +645,40 @@
 
   </div>
 
-  <!-- Footer -->
-  <footer>
 
-    <div class="author-text">
+  <!-- ============================= -->
+  <!-- JAVASCRIPT -->
+  <!-- ============================= -->
 
-      <p>
-        TaskFlow — Cloud-Based Task Management
-      </p>
+  <script src="./js/main.js"></script>
 
-    </div>
 
-  </footer>
+  <!-- ============================= -->
+  <!-- SERVICE WORKER REGISTRATION -->
+  <!-- ============================= -->
 
-  <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+
+        navigator.serviceWorker
+          .register("./sw.js")
+          .then(function (registration) {
+            console.log(
+              "TaskFlow Service Worker registered:",
+              registration.scope
+            );
+          })
+          .catch(function (error) {
+            console.error(
+              "TaskFlow Service Worker registration failed:",
+              error
+            );
+          });
+
+      });
+    }
+  </script>
 
 </body>
 
